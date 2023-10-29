@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
@@ -23,6 +26,57 @@
       <height>580</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+    background: white;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 3px 10px 3px 10px;
+}</string>
+    </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
@@ -30,7 +84,7 @@
      <attribute name="title">
       <string>Календарь</string>
      </attribute>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>-1</x>
@@ -44,6 +98,48 @@
         <layout class="QHBoxLayout" name="horizontalLayout_12">
          <item>
           <widget class="QPushButton" name="addTime30M">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	margin-top: 10px;
+	margin-left: 10px;
+	padding: 2px 2px 2px 2px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
+           </property>
            <property name="text">
             <string>+30 минут</string>
            </property>
@@ -51,6 +147,48 @@
          </item>
          <item>
           <widget class="QPushButton" name="addTime1H">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	margin-top: 10px;
+	margin-right: 5px;
+	padding: 2px 2px 2px 2px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
+           </property>
            <property name="text">
             <string>+1 час</string>
            </property>
@@ -104,6 +242,57 @@
        </item>
        <item>
         <widget class="QTabWidget" name="tabWidget2">
+         <property name="styleSheet">
+          <string notr="true">QTabWidget::pane {
+    border: 1px solid black;
+}
+
+QTabWidget::tab-bar:top {
+    top: 1px;
+}
+
+QTabWidget::tab-bar:bottom {
+    bottom: 1px;
+}
+
+QTabWidget::tab-bar:left {
+    right: 1px;
+}
+
+QTabWidget::tab-bar:right {
+    left: 1px;
+}
+
+QTabBar::tab {
+    border: 1px solid black;
+}
+
+QTabBar::tab:selected {
+    background: white;
+}
+
+QTabBar::tab:!selected {
+    background: silver;
+}
+
+QTabBar::tab:!selected:hover {
+    background: #999;
+}
+
+QTabBar::tab:top:!selected {
+    margin-top: 3px;
+}
+
+QTabBar::tab:bottom:!selected {
+    margin-bottom: 3px;
+}
+
+QTabBar::tab:top, QTabBar::tab:bottom {
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 3px 10px 3px 10px;
+}</string>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
@@ -163,7 +352,7 @@
           <attribute name="title">
            <string>Для сотрудника</string>
           </attribute>
-          <widget class="QWidget" name="">
+          <widget class="QWidget" name="layoutWidget">
            <property name="geometry">
             <rect>
              <x>0</x>
@@ -230,9 +419,16 @@
                <widget class="QSpinBox" name="spinBox2">
                 <property name="minimumSize">
                  <size>
-                  <width>50</width>
-                  <height>0</height>
+                  <width>60</width>
+                  <height>30</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSpinBox {
+     border-image: url(:/images/frame.png) 4;
+     border-width: 3;
+	margin-bottom: 2px;
+ }</string>
                 </property>
                </widget>
               </item>
@@ -243,6 +439,49 @@
                   <width>80</width>
                   <height>35</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	margin-bottom: 10px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding: 2px 2px 2px 2px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
                 </property>
                 <property name="text">
                  <string>Выбрать</string>
@@ -263,12 +502,12 @@
      <attribute name="title">
       <string>Добавить событие</string>
      </attribute>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>210</x>
         <y>100</y>
-        <width>361</width>
+        <width>390</width>
         <height>321</height>
        </rect>
       </property>
@@ -305,6 +544,46 @@
            </item>
            <item>
             <widget class="QPushButton" name="AddButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	padding: 2px 2px 2px 2px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
+             </property>
              <property name="text">
               <string>Добавить</string>
              </property>
@@ -312,6 +591,46 @@
            </item>
            <item>
             <widget class="QPushButton" name="DeleteButton">
+             <property name="styleSheet">
+              <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	padding: 2px 2px 2px 2px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
+             </property>
              <property name="text">
               <string>Удалить</string>
              </property>
@@ -431,6 +750,47 @@
        </item>
        <item>
         <widget class="QPushButton" name="OKbutton">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	padding: 2px 2px 2px 2px;
+	margin: 0px 150px 0px 150px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
+         </property>
          <property name="text">
           <string>ОК</string>
          </property>
@@ -492,6 +852,47 @@
         <width>100</width>
         <height>32</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+     border: 2px solid #8f8f91;
+     border-radius: 6px;
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #f6f7fa, stop: 1 #dadbde);
+     min-width: 80px;
+	padding: 2px 2px 2px 2px;
+	margin-bottom: 5px;
+ }
+
+ QPushButton:pressed {
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton:flat {
+     border: none; /* для плоской кнопки границы нет */
+ }
+
+ QPushButton:default {
+     border-color: navy; /* делаем кнопку по умолчанию выпуклой */
+ }
+Для кнопки QPushButton с меню используйте субэлемент управления ::menu-indicator.
+
+ QPushButton:open { /* когда собственное меню кнопки раскрыто */
+     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                       stop: 0 #dadbde, stop: 1 #f6f7fa);
+ }
+
+ QPushButton::menu-indicator {
+     image: url(menu_indicator.png);
+     subcontrol-origin: padding;
+     subcontrol-position: bottom right;
+ }
+
+ QPushButton::menu-indicator:pressed, QPushButton::menu-indicator:open {
+     position: relative;
+     top: 2px; left: 2px; /* сдвигаем стрелку на 2 px */
+ }</string>
       </property>
       <property name="text">
        <string>Изменить</string>

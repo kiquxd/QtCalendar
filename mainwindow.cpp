@@ -207,13 +207,13 @@ void MainWindow::on_addTime30M_clicked() {
             addEventToTable(event, ui->allEvents);
         }
     }
+    ui->dateTime->setText(cur_datetime.toString());
     if (ui->tabWidget2->currentIndex() != 0) return;
     int i = ui->calendarWidget->selectedDate().day() - 1;
     ui->eventTable->setRowCount(0);
     for (auto& event : calendar[i].getEvents()) {
         addEventToTable(event, ui->eventTable);
     }
-    ui->dateTime->setText(cur_datetime.toString());
 }
 
 
@@ -235,12 +235,12 @@ void MainWindow::on_addTime1H_clicked() {
             addEventToTable(event, ui->allEvents);
         }
     }
+    ui->dateTime->setText(cur_datetime.toString());
     if (ui->tabWidget2->currentIndex() != 0) return;
     int i = ui->calendarWidget->selectedDate().day() - 1;
     ui->eventTable->setRowCount(0);
     for (auto& event : calendar[i].getEvents()) {
         addEventToTable(event, ui->eventTable);
     }
-    ui->dateTime->setText(cur_datetime.toString());
 }
 
